@@ -17,6 +17,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { AvatarModule } from 'primeng/avatar';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
+import { CardModule } from 'primeng/card';
 import { StepsModule } from 'primeng/steps';
 
 @NgModule({
@@ -54,6 +55,7 @@ import { StepsModule } from 'primeng/steps';
     CheckboxModule,
     MultiSelectModule,
     DropdownModule,
+    CardModule,
     StepsModule,
   ],
 })
