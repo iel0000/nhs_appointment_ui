@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-notice',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  nextPage(){
+    this.router.navigate(['appointment/schedule']);
+    return;
   }
 
 }

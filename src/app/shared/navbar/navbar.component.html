@@ -14,7 +14,7 @@
                 <li class="nav-item"><a class="nav-link" href="services.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Contact Us</a></li>
             </ul>
-            <a class="btn btn-primary" *ngIf="!isAppointment" role="button" href="signup.html">Make Appointment</a>
+            <a class="btn" *ngIf="!isAppointment" role="button" [routerLink]="'appointment'">Make Appointment</a>
         </div>
     </div>
 </nav>
