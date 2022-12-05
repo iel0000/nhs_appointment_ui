@@ -18,9 +18,6 @@ import { PrimeNgModule } from './primeng.module';
     RouterModule,
   ],
   providers: [],
-  exports: [
-    ReactiveFormsModule,
-    PrimeNgModule,
-  ],
+  exports: [ReactiveFormsModule, PrimeNgModule],
 })
 export class SharedModule {}

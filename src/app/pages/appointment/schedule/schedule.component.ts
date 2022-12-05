@@ -6,24 +6,20 @@ import { Site } from 'src/app/shared/constant/site';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss']
+  styleUrls: ['./schedule.component.scss'],
 })
 export class ScheduleComponent implements OnInit {
   site = Site;
   selectedTime!: string;
-  
-  constructor(private router: Router) { 
 
-  }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
-  nextPage(){
+  ngOnInit(): void {}
+  nextPage() {
     this.router.navigate(['appointment/personal-info']);
     return;
   }
   prevPage() {
     this.router.navigate(['appointment/notice']);
   }
-
 }

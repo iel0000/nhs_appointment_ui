@@ -8,9 +8,8 @@ describe('VisaInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VisaInfoComponent ]
-    })
-    .compileComponents();
+      declarations: [VisaInfoComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(VisaInfoComponent);
     component = fixture.componentInstance;

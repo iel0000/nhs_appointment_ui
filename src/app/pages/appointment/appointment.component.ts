@@ -5,14 +5,12 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
-  styleUrls: ['./appointment.component.scss']
+  styleUrls: ['./appointment.component.scss'],
 })
 export class AppointmentComponent implements OnInit {
   items: MenuItem[];
 
-  constructor(
-  private formBuilder: FormBuilder,
-  ) {
+  constructor(private formBuilder: FormBuilder) {
     this.items = [
       { label: 'Notice', routerLink: 'notice' },
       { label: 'Schedule', routerLink: 'schedule' },
@@ -20,10 +18,7 @@ export class AppointmentComponent implements OnInit {
       { label: 'Visa Info', routerLink: 'visa-info' },
       { label: 'Review', routerLink: 'review' },
     ];
-
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

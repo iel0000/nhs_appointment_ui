@@ -9,7 +9,7 @@ import { Referred } from '@app/shared/constant/referred';
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
-  styleUrls: ['./personal.component.scss']
+  styleUrls: ['./personal.component.scss'],
 })
 export class PersonalComponent implements OnInit {
   personalForm: FormGroup;
@@ -22,14 +22,11 @@ export class PersonalComponent implements OnInit {
   birthDate!: string;
   dateIssued!: string;
 
-  constructor(
-    private router: Router,
-    private formBuilder: FormBuilder,
-    ) { 
-      this.today = new Date();
-      this.personalForm = this.formBuilder.group({
-        id: 0,
-        personalCategory: ['', Validators.required],
+  constructor(private router: Router, private formBuilder: FormBuilder) {
+    this.today = new Date();
+    this.personalForm = this.formBuilder.group({
+      id: 0,
+      personalCategory: ['', Validators.required],
       referral: ['', Validators.required],
       firstName: ['', [Validators.required, Validators.pattern(/[\S]/)]],
       lastName: ['', [Validators.required, Validators.pattern(/[\S]/)]],
@@ -54,11 +51,10 @@ export class PersonalComponent implements OnInit {
       otherId: '',
       landLineNumber: ['', Validators.required],
       isAcceptedTerms: [false, Validators.requiredTrue],
-      });
-    }
-
-  ngOnInit(): void {
+    });
   }
+
+  ngOnInit(): void {}
 
   // Menstrual Validation
   validateMenstrualDates(event: any) {
@@ -124,13 +120,11 @@ export class PersonalComponent implements OnInit {
     }
     return false;
   }
-  nextPage(){
+  nextPage() {
     this.router.navigate(['appointment/visa-info']);
     return;
   }
   prevPage() {
     this.router.navigate(['appointment/schedule']);
   }
-
-
 }

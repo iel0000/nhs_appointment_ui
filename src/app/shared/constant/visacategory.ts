@@ -1,4 +1,1 @@
-  export const visaCategory = [
-    { name: 'Limited' },
-    { name: 'Full'},
-  ];
+export const visaCategory = [{ name: 'Limited' }, { name: 'Full' }];

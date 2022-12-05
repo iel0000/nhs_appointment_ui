@@ -3,19 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
-import { 
-  NoticeComponent, PersonalComponent, ReviewComponent, ScheduleComponent, VisaInfoComponent
-
+import {
+  NoticeComponent,
+  PersonalComponent,
+  ReviewComponent,
+  ScheduleComponent,
+  VisaInfoComponent,
 } from './pages/appointment';
 
-
 const routes: Routes = [
-
   {
     path: '',
     component: HomeComponent,
   },
-    
+
   {
     path: 'appointment',
     component: AppointmentComponent,
@@ -27,12 +28,11 @@ const routes: Routes = [
       { path: 'visa-info', component: VisaInfoComponent },
       { path: 'review', component: ReviewComponent },
     ],
-  }
-
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

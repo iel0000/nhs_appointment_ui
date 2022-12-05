@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
-import { 
-  NoticeComponent, 
-  PersonalComponent, 
+import {
+  NoticeComponent,
+  PersonalComponent,
   ReviewComponent,
-  ScheduleComponent, 
-  VisaInfoComponent } 
-  from './pages/appointment';
+  ScheduleComponent,
+  VisaInfoComponent,
+} from './pages/appointment';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import {
     PersonalComponent,
     VisaInfoComponent,
     ReviewComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -36,6 +35,6 @@ import {
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
