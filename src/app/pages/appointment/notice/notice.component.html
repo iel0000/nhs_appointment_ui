@@ -32,7 +32,12 @@
       5. IF YOU CONTINUE TO USE THIS WEBSITE, YOU WILLFULY AGREE TO OUR TERMS,
       CONDITIONS, AND PRIVACY POLICY; IF YOU DO NOT AGREE, DO NOT USE THE SITE.
     </p>
-    <p-checkbox [binary]="true" inputId="isAcceptedTerms" class="mr-2">
+    <p-checkbox
+      [binary]="true"
+      inputId="isAcceptedTerms"
+      class="mr-2"
+      [(ngModel)]="isAcceptedTerms"
+      (onChange)="changeAccept($event)">
     </p-checkbox>
     <label for="isAcceptedTerms"
       ><b>
@@ -45,7 +50,8 @@
         label="Next"
         (onClick)="nextPage()"
         icon="pi pi-angle-right"
-        iconPos="right"></p-button>
+        iconPos="right"
+        [disabled]="!isAcceptedTerms"></p-button>
     </div>
   </section>
 </p-card>

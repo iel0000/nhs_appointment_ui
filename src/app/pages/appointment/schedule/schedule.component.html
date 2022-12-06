@@ -1,154 +1,70 @@
-<div class="stepsdemo-content">
-  <p-card>
-    <ng-template pTemplate="title"> Date and Time </ng-template>
-    <ng-template pTemplate="subtitle">
-      Please choose one(
-      <span style="color: red">*</span> )
-    </ng-template>
-    <ng-template pTemplate="content">
-      <div class="row">
-        <h5>Site:<span style="color: red">*</span></h5>
-        <div class="p-fluid formgrid grid">
-          <div class="field col-12 md:col-4">
-            <p-dropdown
-              [options]="site"
-              placeholder="Select Site"
-              optionLabel="name"
-              [showClear]="true"></p-dropdown>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="p-fluid formgrid grid">
-          <div class="field col-12 md:col-6">
-            <h5>Date<span style="color: red">*</span></h5>
-            <p-divider></p-divider>
-            <p-calendar [inline]="true" [showWeek]="true"></p-calendar>
-          </div>
-          <div class="field col-12 md:col-6">
-            <h5>Time<span style="color: red">*</span></h5>
-            <p-divider></p-divider>
-            <!-- Time  -->
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="8-9"
-                    label="08:00am - 09:00am"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="9-10"
-                    label="09:00am - 10:00am"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="10-11"
-                    label="10:00am - 11:00am"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="11-12"
-                    label="11:00am - 12:00pm"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="12-1"
-                    label="12:00pm - 01:00pm"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="1-2"
-                    label="01:00pm - 02:00pm"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="2-3"
-                    label="02:00pm - 03:00pm"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field-radiobutton">
-                  <p-radioButton
-                    name="time"
-                    value="3-4"
-                    label="03:00pm - 04:00pm"
-                    [(ngModel)]="selectedTime">
-                  </p-radioButton>
-                </div>
-              </div>
-              <div class="col">Available</div>
+<form [formGroup]="scheduleForm">
+  <div class="stepsdemo-content">
+    <p-card>
+      <ng-template pTemplate="title"> Date and Time </ng-template>
+      <ng-template pTemplate="subtitle">
+        Please choose one(
+        <span style="color: red">*</span> )
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="row">
+          <h5>Site:<span style="color: red">*</span></h5>
+          <div class="p-fluid formgrid grid">
+            <div class="field col-12 md:col-4">
+              <p-dropdown
+                [options]="site"
+                placeholder="Select Site"
+                optionLabel="name"
+                [showClear]="true"
+                formControlName="site"></p-dropdown>
             </div>
           </div>
         </div>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <div class="grid grid-nogutter justify-content-between">
-        <p-button
-          label="Back"
-          (onClick)="prevPage()"
-          icon="pi pi-angle-left"></p-button>
-        <p-button
-          label="Next"
-          (onClick)="nextPage()"
-          icon="pi pi-angle-right"
-          iconPos="right"></p-button>
-      </div>
-    </ng-template>
-  </p-card>
-</div>
+        <div class="row">
+          <div class="p-fluid formgrid grid">
+            <div class="field col-12 md:col-6">
+              <h5>Date<span style="color: red">*</span></h5>
+              <p-divider></p-divider>
+              <p-calendar
+                [inline]="true"
+                [showWeek]="true"
+                formControlName="appointmentDate"
+                dataType="string"
+                [(ngModel)]="appointmentDate"></p-calendar>
+            </div>
+            <div class="field col-12 md:col-6">
+              <h5>Time<span style="color: red">*</span></h5>
+              <p-divider></p-divider>
+              <!-- Time  -->
+              <div
+                class="row"
+                *ngIf="scheduleForm.get('appointmentDate')?.value">
+                <div class="col">
+                  <div class="field-radiobutton">
+                    <p-radioButton
+                      name="appointmentTime"
+                      value="8-9"
+                      label="08:00am - 09:00am"
+                      formControlName="appointmentTime">
+                    </p-radioButton>
+                  </div>
+                </div>
+                <div class="col">Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="grid grid-nogutter justify-content-end">
+          <p-button
+            label="Next"
+            (onClick)="nextPage()"
+            icon="pi pi-angle-right"
+            iconPos="right"
+            [disabled]="scheduleForm.invalid"></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</form>

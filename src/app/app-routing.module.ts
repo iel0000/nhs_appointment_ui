@@ -10,13 +10,13 @@ import {
   ScheduleComponent,
   VisaInfoComponent,
 } from './pages/appointment';
+import { ErrorComponent } from './pages/error/error.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
-
   {
     path: 'appointment',
     component: AppointmentComponent,
@@ -28,6 +28,10 @@ const routes: Routes = [
       { path: 'visa-info', component: VisaInfoComponent },
       { path: 'review', component: ReviewComponent },
     ],
+  },
+  {
+    path: '**',
+    component: ErrorComponent, //add error page
   },
 ];
 
