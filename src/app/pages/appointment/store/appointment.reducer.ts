@@ -126,5 +126,11 @@ export const appointmentPageReducer = createReducer(
         personalInformation: values,
       };
     }
+  ),
+  on(
+    AppointmentPageActions.UpdateVisaInformation,
+    (state, { payload }): IAppointment => {
+      return { ...state, visaInformation: payload };
+    }
   )
 );

@@ -18,6 +18,7 @@ import { StoreModule } from '@ngrx/store';
 import { appointmentPageReducer } from '@app/pages/appointment/store/appointment.reducer';
 import { ErrorComponent } from '@app/pages/error/error.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { LoadingInterceptor } from '@core/interceptor';
 import { SpinnerComponent } from './spinner/spinner.component';
 
@@ -49,6 +50,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
       useClass: LoadingInterceptor,
       multi: true,
     },
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

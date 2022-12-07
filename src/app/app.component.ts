@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { LoaderService } from './shared/services';
 
 @Component({
   selector: 'app-root',

@@ -126,11 +126,13 @@ export class PersonalComponent implements OnInit, OnDestroy {
         }
       });
 
-    this.httpSvc.get('Client/GetPersonalCategories').subscribe(response => {
-      this.categories = response;
-    });
+    this.httpSvc
+      .get('Appointment/GetPersonalCategories')
+      .subscribe(response => {
+        this.categories = response;
+      });
 
-    this.httpSvc.get('Client/GetReferrals').subscribe(response => {
+    this.httpSvc.get('Appointment/GetReferrals').subscribe(response => {
       this.referrals = response;
     });
   }

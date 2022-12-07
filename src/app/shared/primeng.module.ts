@@ -21,6 +21,9 @@ import { CardModule } from 'primeng/card';
 import { StepsModule } from 'primeng/steps';
 import { DividerModule } from 'primeng/divider';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { PanelModule } from 'primeng/panel';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -41,8 +44,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     DropdownModule,
     StepsModule,
     InputTextareaModule,
+    PanelModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService, ConfirmationService],
   exports: [
     ReactiveFormsModule,
     HttpClientModule,
@@ -63,6 +68,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     StepsModule,
     DividerModule,
     InputTextareaModule,
+    PanelModule,
+    ToastModule,
   ],
 })
 export class PrimeNgModule {}
