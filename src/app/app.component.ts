@@ -7,5 +7,5 @@ import { LoaderService } from './shared/services';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'nhs_appointment_ui';
+  title = 'Nationwide Health System Group';
 }
