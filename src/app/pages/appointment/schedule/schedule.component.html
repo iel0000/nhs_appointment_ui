@@ -69,7 +69,8 @@
                         name="appointmentTime"
                         [value]="time.id"
                         [label]="time.name"
-                        formControlName="appointmentTime">
+                        formControlName="appointmentTime"
+                        [disabled]="time.availableSlot === 0">
                       </p-radioButton>
                     </div>
                   </div>
