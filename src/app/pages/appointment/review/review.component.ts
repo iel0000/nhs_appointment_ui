@@ -206,14 +206,15 @@ export class ReviewComponent implements OnInit, OnDestroy {
       .subscribe(
         response => {
           this.messageService.add({
-            severity: 'success',
+            severity: response.status.toLowerCase(),
             summary: 'Save Record',
-            detail:
-              'Appointment has been sent. Please check your email for the appointment details.',
+            detail: response.message,
           });
 
-          this.store.dispatch(ResetAppointmentForm());
-          this.router.navigate(['appointment/notice']);
+          if (response.status === 'Success') {
+            this.store.dispatch(ResetAppointmentForm());
+            this.router.navigate(['appointment/notice']);
+          }
         },
         error => {
           this.messageService.add({
