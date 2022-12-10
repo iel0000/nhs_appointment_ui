@@ -119,6 +119,13 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 
   getDisabledDays(event: any) {
     this.showCalendar = false;
+    this.selectedTime = '';
+    this.appointmentDate = '';
+    this.scheduleForm.patchValue({
+      appointmentDate: '',
+      appointmentTime: '',
+    });
+
     if (this.selectedBranch) {
       this.httpSvc
         .get(`Appointment/GetDisabledDays/${this.selectedBranch}`)
