@@ -11,8 +11,16 @@
           <div class="p-fluid formgrid grid">
             <div class="field col-12 md:col-4">
               <label for="embassy"> Site</label>
-              <div class="text-lg">{{ scheduleInformation.site }}</div>
+              <div class="text-lg">NHS {{ branch?.name }}</div>
             </div>
+          </div>
+          <div class="p-fluid formgrid grid">
+            <div class="field col-12">
+              <label for="embassy"> Location</label>
+              <div class="text-lg">{{ branch?.location }}</div>
+            </div>
+          </div>
+          <div class="p-fluid formgrid grid">
             <div class="field col-12 md:col-4">
               <label for="visaType">Appointment Date</label>
               <div class="text-lg">
@@ -22,7 +30,7 @@
             <div class="field col-12 md:col-4">
               <label for="visaCategory">Appointment Time</label>
               <div class="text-lg">
-                {{ scheduleInformation.appointmentTime }}
+                {{ appointmentTime }}
               </div>
             </div>
           </div>
@@ -128,9 +136,7 @@
 
           <div class="p-fluid formgrid grid">
             <div class="field col-12 md:col-4">
-              <label class="small mb-1" for="passportNumber"
-                >Passport Number</label
-              >
+              <label class="mb-1" for="passportNumber">Passport Number</label>
               <div class="text-lg">
                 {{ personalInformation.passportNumber }}
               </div>
@@ -153,14 +159,14 @@
             class="p-fluid formgrid grid"
             *ngIf="personalInformation.hasOtherId">
             <div class="field col-12 md:col-4">
-              <label class="small mb-1" for="otherId">Other ID</label>
+              <label class="mb-1" for="otherId">Other ID</label>
               <div class="text-lg">{{ personalInformation.otherId }}</div>
             </div>
           </div>
 
           <div class="p-fluid formgrid grid">
             <div class="field col-12 md:col-4">
-              <label class="small mb-1" for="email">Email Address</label>
+              <label class="mb-1" for="email">Email Address</label>
               <div class="text-lg">{{ personalInformation.email }}</div>
             </div>
             <div class="field col-12 md:col-4">
