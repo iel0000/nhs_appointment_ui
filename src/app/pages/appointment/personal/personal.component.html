@@ -173,23 +173,6 @@
             >Gender is required.</small
           >
         </div>
-        <div class="field col-12 md:col-6">
-          <label class="mb-1" for="intendedOccupation"
-            >Intended Occupation / Activity / Study(Course)
-            <span style="color: red">*</span></label
-          >
-          <input
-            id="intendedOccupation"
-            type="text"
-            pInputText
-            formControlName="intendedOccupation"
-            [ngClass]="{
-              'ng-dirty': validateControl('intendedOccupation')
-            }" />
-          <small *ngIf="validateControl('intendedOccupation')" class="p-error"
-            >Intended Occupation / Activity / Study(Course) is required.</small
-          >
-        </div>
       </div>
 
       <div

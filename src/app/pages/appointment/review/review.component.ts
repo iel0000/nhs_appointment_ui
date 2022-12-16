@@ -230,7 +230,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
 
           if (response.status === 'Success') {
             this.store.dispatch(ResetAppointmentForm());
-            this.router.navigate(['appointment/notice']);
+            this.router.navigate(['']);
           }
         },
         error => {
