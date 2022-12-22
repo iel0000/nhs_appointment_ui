@@ -32,7 +32,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'contact',
+    path: 'contact_us',
     component: ContactComponent,
   },
   {
