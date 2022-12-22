@@ -1,11 +1,11 @@
 <nav
-  class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3"
+  class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3 "
   id="mainNav">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="/">
       <span
         class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"></span>
-      <span>NHS Group</span>
+        <h2 class="m-0">NHS Group</h2>
     </a>
     <button
       data-bs-toggle="collapse"
@@ -21,7 +21,7 @@
           <a class="nav-link" href="services.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contacts.html">Contact Us</a>
+          <a class="nav-link" [routerLink]="'contact'">Contact Us</a>
         </li>
       </ul>
       <a
@@ -29,7 +29,7 @@
         *ngIf="!isAppointment"
         role="button"
         [routerLink]="'appointment'"
-        >Make Appointment</a
+        >Make an Appointment</a
       >
     </div>
   </div>

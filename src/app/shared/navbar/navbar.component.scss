@@ -132,16 +132,20 @@
 
 .btn {
 
-    font-weight: 700 ;
-    padding: 0.6rem 2rem !important;
+    font-weight: 500 ;
+    padding: 0.8rem  0.8rem !important;
     font-size: 1rem !important;
     border-radius: 2rem !important;
-    background-color: #47536e;
+    background-color: #16D5FF;
     color: #fff;
 }
 .btn:hover{
-    background-color: #5777ba;
+    background-color: #10b3d8;
 }
 ul {
     font-size: 1.2rem;
+}
+h2{
+    color: #16D5FF;
+    font-weight: 800;
 }

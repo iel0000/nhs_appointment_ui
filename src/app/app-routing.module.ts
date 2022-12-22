@@ -11,11 +11,13 @@ import {
   VisaInfoComponent,
 } from './pages/appointment';
 import { ErrorComponent } from './pages/error/error.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LayoutComponent,
   },
   {
     path: 'appointment',
@@ -28,6 +30,10 @@ const routes: Routes = [
       { path: 'visa-info', component: VisaInfoComponent },
       { path: 'review', component: ReviewComponent },
     ],
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
   {
     path: '**',

@@ -24,6 +24,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PanelModule } from 'primeng/panel';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [],
@@ -46,6 +47,7 @@ import { ToastModule } from 'primeng/toast';
     InputTextareaModule,
     PanelModule,
     ToastModule,
+    DialogModule,
   ],
   providers: [MessageService, ConfirmationService],
   exports: [
@@ -70,6 +72,7 @@ import { ToastModule } from 'primeng/toast';
     InputTextareaModule,
     PanelModule,
     ToastModule,
+    DialogModule,
   ],
 })
 export class PrimeNgModule {}
