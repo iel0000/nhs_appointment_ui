@@ -1,0 +1,28 @@
+.submit-btn {
+    font-family: "raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    display: inline-block;
+    transition: 0.3s;
+    color: #fff;
+    background: #000;
+    position: relative;
+    border-radius: 1rem;
+  }
+  .submit-btn:hover {
+        background: none;
+        color: #000;
+        border: 2px solid black;
+  }
+  .text-primary {
+    color: #16D5FF !important;
+  }
+  #contact i {
+    color: #16D5FF !important;
+    background-color: #f3f3f3;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  #contact p{
+    color: #999999;
+  }

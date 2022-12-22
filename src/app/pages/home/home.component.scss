@@ -1,103 +1,120 @@
-#hero {
-    width: 100%;
+
+
+.hero-slant h1 {
+  font-size: 3.5rem;
+  font-family: "Montserrat", sans-serif !important;
+}
+.hero-slant p {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 1rem;
+}
+.hero-slant {
+  font-family: "Raleway", sans-serif;
+  background-color: #ccc;
+  position: relative;
+  background-size: cover; }
+  .hero-slant.overlay {
+    position: relative; }
+    .hero-slant.overlay:before {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.2); }
+  .hero-slant .container {
+    position: relative; }
+  .hero-slant, .hero-slant > .container > .row {
+    height: 120vh; }
+  .hero-slant .intro {
     position: relative;
-    overflow: hidden;
-    padding: 140px 0 100px 0;
-  }
-  
-  #hero::before {
-    content: "";
+    z-index: 2;
+    max-width: 510px;}
+  .hero-slant .hero_img {
     position: absolute;
-    right: -100%;
-    top: 20%;
-    width: 250%;
-    height: 200%;
-    z-index: -1;
-    background-color: #a2dadf;
-    transform: skewY(135deg);
-  }
-  
-  #hero h1 {
-    margin: 0 0 10px 0;
-    font-size: 68px;
-    font-weight: 550;
-    line-height: 66px;
-    color: #515f7d;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  #hero h2 {
-    color: #000;
-    margin-bottom: 50px;
-    font-size: 20px;
-    width: 550px;
-  }
-  
-  #hero .appointment-btn {
+    right: 0;
+    z-index: 9;
+    bottom: 100px; }
+    @media (max-width: 991.98px) {
+      .hero-slant .hero_img {
+        position: relative;
+        margin-top: -200px;
+        bottom: -100px;
+        margin-bottom: 140px; } }
+  .hero-slant .slant {
+    position: absolute;
+    width: calc(100% + 2px);
+    height: 380px;
+    bottom: -2px;
+    left: -2px;
+    z-index: 1;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat; }
+
+  .appointment-btn {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     display: inline-block;
-    padding: 8px 24px 10px 46px;
-    border-radius: 3px;
-    transition: 0.5s;
-    color: #fff;
-    background: #47536e;
+    transition: 0.3s;
+    color: #000;
+    background: #fff;
     position: relative;
   }
-  
-  #hero .appointment-btn:hover {
-    background: #5777ba;
+  .appointment-btn:hover {
+        background: #16D5FF;
+        color: #fff;
+        font-weight: 700;
   }
-  
-  #hero .appointment-btn i {
-    font-size: 20px;
-    position: absolute;
-    left: 18px;
-    top: 8.5px;
+  .animate__animated.animate__fadeIn{
+    --animate-delay: 0.5s;
   }
-  
-  #hero .appointment-btn+.appointment-btn {
-    margin-left: 20px;
+
+.text-primary{
+  color: #10b3d8!important;
+}
+.text-secondary{
+  color: #999999!important;
+  font-size: 1.25rem !important;  
+}
+.fs-5 {
+  font-size:1.5rem !important
+}
+.ps-4{padding-left:1.5rem !important}
+//about
+.about {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  color: #000 !important;
+}
+@media (max-width: 993px) {
+  #about img {
+    display: none;
   }
-  
-  @media (max-width: 991px) {
-    #hero {
-      text-align: center;
-    }
-  
-    #hero .appointment-btn+.appointment-btn {
-      margin: 0 10px;
-    }
-  
-    #hero .hero-img {
-      text-align: center;
-    }
-  
-    #hero .hero-img img {
-      width: 60%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #hero h1 {
-      font-size: 28px;
-      line-height: 36px;
-    }
-  
-    #hero h2 {
-      font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 30px;
-    }
-  
-    #hero .hero-img img {
-      width: 70%;
-    }
-  }
-  
-  @media (max-width: 575px) {
-    #hero .hero-img img {
-      width: 80%;
-    }
-  }
+}
+// whyUs
+.whyUs {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+  color: #10b3d8 !important;
+}
+#whyUs p {
+  color: #999999 !important;
+}
+
+// contact section
+.btn {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 4px;
+  font-size: 1.5rem; 
+  font-weight:600;
+  background-color: #16D5FF;
+  color: #000;}
+.facts {
+    background: linear-gradient(rgba(9, 226, 255, 0.95), rgba(13, 133, 189, 0.95)), url(../../../assets/img/bg.png) !important;
+}
