@@ -247,12 +247,33 @@
           >
         </div>
       </div>
+
+      <div class="p-fluid formgrid grid">
+        <div class="field col-12">
+          <label class="mb-1" for="intendedOccupation"
+            >Intended Occupation / Activity / Study(Course)
+            <span style="color: red">*</span></label
+          >
+          <textarea
+            pInputTextarea
+            formControlName="intendedOccupation"
+            [rows]="5"
+            placeholder="Intended Occupation / Activity / Study(Course)"
+            [ngClass]="{
+              'ng-dirty': validateControl('intendedOccupation')
+            }"></textarea>
+          <small *ngIf="validateControl('intendedOccupation')" class="p-error"
+            >Intended Occupation / Activity / Study(Course) is required.</small
+          >
+        </div>
+      </div>
       <!-- Passport / Date Issued -->
 
       <div class="p-fluid formgrid grid">
         <div class="field col-12 md:col-4">
           <label class="small mb-1" for="passportNumber"
-            >Passport Number <span style="color: red">*</span></label
+            >Passport Number
+            <span style="color: red" *ngIf="isPassportRequired">*</span></label
           >
           <input
             id="passportNumber"
@@ -268,7 +289,8 @@
         </div>
         <div class="field col-12 md:col-4">
           <label class="mb-1" for="dateIssued"
-            >Date Issued <span style="color: red">*</span></label
+            >Date Issued
+            <span style="color: red" *ngIf="isPassportRequired">*</span></label
           >
           <p-calendar
             inputId="icon"
@@ -337,7 +359,6 @@
             pInputText
             formControlName="email"
             placeholder="sample@sample.com"
-            (keypress)="validateEmail($event)"
             [ngClass]="{
               'ng-dirty': validateControl('email')
             }" />
@@ -403,7 +424,8 @@
         label="Next"
         (onClick)="nextPage()"
         icon="pi pi-angle-right"
-        iconPos="right"></p-button>
+        iconPos="right"
+        [disabled]="personalForm.invalid"></p-button>
     </div>
   </ng-template>
 </p-card>

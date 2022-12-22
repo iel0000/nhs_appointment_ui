@@ -1,28 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Category } from '@app/shared/constant/category';
 import { CiviStatus } from '@app/shared/constant/civilStatus';
 import { Gender } from '@app/shared/constant/gender';
-import { Referred } from '@app/shared/constant/referred';
+import { IDropDown, IPersonalInformation } from '@app/shared/interface';
+import { Store } from '@ngrx/store';
+import { Subject, takeUntil } from 'rxjs';
+import { HttpService } from 'src/services/http.service';
+import { selectRecord, UpdatePersonalInformation } from '../store';
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
   styleUrls: ['./personal.component.scss'],
 })
-export class PersonalComponent implements OnInit {
+export class PersonalComponent implements OnInit, OnDestroy {
   personalForm: FormGroup;
   gender = Gender;
-  categories = Category;
+  categories!: IDropDown[];
+  referrals!: IDropDown[];
   civilStatus = CiviStatus;
-  referrals = Referred;
+  isPassportRequired = true;
 
   today: Date;
   birthDate!: string;
   dateIssued!: string;
+  private ngUnsubscribe = new Subject<void>();
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private store: Store,
+    private httpSvc: HttpService
+  ) {
     this.today = new Date();
     this.personalForm = this.formBuilder.group({
       id: 0,
@@ -35,9 +45,8 @@ export class PersonalComponent implements OnInit {
       age: ['', [Validators.required, Validators.pattern(/[\S]/)]],
       gender: ['', [Validators.required, Validators.pattern(/[\S]/)]],
       mobileNumber: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern(/[\S]/)]],
+      email: ['', [Validators.required, Validators.email]],
       address: ['', [Validators.required, Validators.pattern(/[\S]/)]],
-      eMedicalRefNo: ['', [Validators.required, Validators.pattern(/[\S]/)]],
       civilStatus: ['', Validators.required],
       hasMenstrualPeriod: false,
       menstrualPeriodStart: '',
@@ -50,11 +59,88 @@ export class PersonalComponent implements OnInit {
       hasOtherId: false,
       otherId: '',
       landLineNumber: ['', Validators.required],
-      isAcceptedTerms: [false, Validators.requiredTrue],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store
+      .select(selectRecord)
+      .pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(s => {
+        if (!s.isAcceptedTerms) {
+          this.router.navigate(['appointment/notice']);
+          return;
+        }
+
+        this.birthDate = s.personalInformation.birthDate;
+        this.dateIssued = s.personalInformation.dateIssued;
+
+        this.personalForm.patchValue({
+          id: s.personalInformation.id,
+          personalCategory: s.personalInformation.personalCategory,
+          referral: s.personalInformation.referral,
+          firstName: s.personalInformation.firstName,
+          lastName: s.personalInformation.lastName,
+          middleName: s.personalInformation.middleName,
+          birthDate: this.birthDate,
+          age: s.personalInformation.age,
+          gender: s.personalInformation.gender,
+          address: s.personalInformation.address,
+          mobileNumber: s.personalInformation.mobileNumber,
+          email: s.personalInformation.email,
+          civilStatus: s.personalInformation.civilStatus,
+          hasMenstrualPeriod: s.personalInformation.hasMenstrualPeriod,
+          menstrualPeriodStart: s.personalInformation.menstrualPeriodStart
+            ? s.personalInformation.menstrualPeriodStart
+            : '',
+          menstrualPeriodEnd: s.personalInformation.menstrualPeriodEnd
+            ? s.personalInformation.menstrualPeriodEnd
+            : '',
+          intendedOccupation: s.personalInformation.intendedOccupation,
+          hasPassport: s.personalInformation.hasPassport,
+          passportNumber: s.personalInformation.passportNumber,
+          dateIssued: this.dateIssued,
+          isExpired: s.personalInformation.isExpired,
+          hasOtherId: s.personalInformation.hasOtherId,
+          otherId: s.personalInformation.otherId,
+          landLineNumber: s.personalInformation.landLineNumber,
+          isAcceptedTerms: s.personalInformation.isAcceptedTerms,
+        });
+
+        this.isPassportRequired = !s.personalInformation.hasOtherId;
+
+        if (!this.isPassportRequired) {
+          this.personalForm.get('passportNumber')?.setValidators(null);
+          this.personalForm.get('dateIssued')?.setValidators(null);
+          this.personalForm.get('isExpired')?.setValidators(null);
+        } else {
+          this.personalForm
+            .get('passportNumber')
+            ?.addValidators(Validators.required);
+          this.personalForm
+            .get('dateIssued')
+            ?.addValidators(Validators.required);
+          this.personalForm
+            .get('isExpired')
+            ?.addValidators(Validators.required);
+        }
+      });
+
+    this.httpSvc
+      .get('Appointment/GetPersonalCategories')
+      .subscribe(response => {
+        this.categories = response;
+      });
+
+    this.httpSvc.get('Appointment/GetReferrals').subscribe(response => {
+      this.referrals = response;
+    });
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
 
   // Menstrual Validation
   validateMenstrualDates(event: any) {
@@ -92,21 +178,29 @@ export class PersonalComponent implements OnInit {
     this.personalForm.get('otherId')?.patchValue('');
     if (event.checked) {
       this.personalForm.get('otherId')?.addValidators(Validators.required);
+      this.personalForm.get('passportNumber')?.patchValue('');
+      this.personalForm.get('dateIssued')?.patchValue('');
+      this.personalForm.get('isExpired')?.patchValue(false);
+
+      this.personalForm.get('passportNumber')?.setValidators(null);
+      this.personalForm.get('dateIssued')?.setValidators(null);
+      this.personalForm.get('isExpired')?.setValidators(null);
     } else {
       this.personalForm.get('otherId')?.setValidators(null);
       this.personalForm.get('otherId')?.setErrors(null);
+      this.personalForm
+        .get('passportNumber')
+        ?.addValidators(Validators.required);
+      this.personalForm.get('dateIssued')?.addValidators(Validators.required);
+      this.personalForm.get('isExpired')?.addValidators(Validators.required);
     }
 
     this.personalForm.get('otherId')?.updateValueAndValidity();
-  }
-  // Email Validator
+    this.personalForm.get('passportNumber')?.updateValueAndValidity();
+    this.personalForm.get('dateIssued')?.updateValueAndValidity();
+    this.personalForm.get('isExpired')?.updateValueAndValidity();
 
-  validateEmail($event: Event) {
-    if ($event) {
-      this.personalForm.get('email')?.addValidators(Validators.email);
-    } else {
-      this.personalForm.get('email')?.removeValidators;
-    }
+    this.isPassportRequired = !event.checked;
   }
 
   // Control Validator
@@ -120,7 +214,20 @@ export class PersonalComponent implements OnInit {
     }
     return false;
   }
+
+  onPassportChange(event: any) {
+    console.log(event.target.value);
+    if (event.target.value) {
+      this.personalForm.get('hasOtherId')?.patchValue(false);
+    }
+  }
+
   nextPage() {
+    this.store.dispatch(
+      UpdatePersonalInformation({
+        payload: <IPersonalInformation>this.personalForm.getRawValue(),
+      })
+    );
     this.router.navigate(['appointment/visa-info']);
     return;
   }

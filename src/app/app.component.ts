@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { LoaderService } from './shared/services';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'nhs_appointment_ui';
+  title = 'Nationwide Health System Group';
 }
