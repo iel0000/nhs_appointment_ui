@@ -36,6 +36,8 @@ export class ReviewComponent implements OnInit, OnDestroy {
   referrals!: string;
   intendedWork!: string;
   lengthOfStay!: string;
+  appointmentTime!: string;
+  branch!: any;
 
   constructor(
     private store: Store,
@@ -127,6 +129,21 @@ export class ReviewComponent implements OnInit, OnDestroy {
         this.getVisaCategories(+s.visaInformation.embassy);
         this.getVisaTypes();
         this.getEmbassies();
+
+        this.httpService
+          .get(
+            `Appointment/GetAppointmentTimeById/${+this.reviewForm.schedule
+              .appointmentTime}`
+          )
+          .subscribe(response => {
+            this.appointmentTime = response.name;
+          });
+
+        this.httpService
+          .get(`Appointment/GetBranchById/${+this.reviewForm.schedule.site}`)
+          .subscribe(response => {
+            this.branch = response;
+          });
       });
 
     this.httpService

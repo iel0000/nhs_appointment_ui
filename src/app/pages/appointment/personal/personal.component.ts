@@ -58,7 +58,7 @@ export class PersonalComponent implements OnInit, OnDestroy {
       isExpired: [false, Validators.required],
       hasOtherId: false,
       otherId: '',
-      landLineNumber: ['', Validators.required],
+      landLineNumber: '',
     });
   }
 

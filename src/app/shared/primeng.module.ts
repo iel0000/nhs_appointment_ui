@@ -48,7 +48,6 @@ import { TagModule } from 'primeng/tag';
     PanelModule,
     ToastModule,
     TagModule,
-    
   ],
   providers: [MessageService, ConfirmationService],
   exports: [
