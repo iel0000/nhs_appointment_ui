@@ -21,11 +21,16 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { LoadingInterceptor } from '@core/interceptor';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent,
     HomeComponent,
     AppointmentComponent,
     NoticeComponent,
@@ -33,8 +38,11 @@ import { SpinnerComponent } from './spinner/spinner.component';
     PersonalComponent,
     VisaInfoComponent,
     ReviewComponent,
+    LayoutComponent,
     ErrorComponent,
     SpinnerComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
