@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { HomeComponent } from './pages/home/home.component';
 import {
   NoticeComponent,
   PersonalComponent,
@@ -13,6 +11,7 @@ import {
 import { ErrorComponent } from './pages/error/error.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -32,8 +31,12 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'contact_us',
+    path: 'contact',
     component: ContactComponent,
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: '**',

@@ -1,105 +1,132 @@
-<app-navbar></app-navbar>
 <div class="container-xxl py-5 mt-8 mb-8">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6 animate__animated animate__fadeInUp">
-                <h1 class="display-5 mb-4">Get in Touch</h1>
-                <p class="mb-4 text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora ipsum sapiente animi, provident consequatur doloribus?</p>
-                <form>
-                    <div class="p-fluid formgrid grid">
-                        <div class="field col-lg-6 md:col-3">
-                            <label class="mb-1" for="Name"
-                            >Your Name</label
-                          >
-                          <input
-                            id="Name"
-                            type="text"
-                            pInputText
-                            formControlName="name"/>
-                        </div>
-                        <div class="field col-lg-6 md:col-3">
-                            <label class="mb-1" for="email"
-                            >Email Address</label>
-                          
-                          <input
-                            id="email"
-                            type="text"
-                            pInputText
-                            formControlName="email"/>
-                        </div>
-                    </div>
-                    <div class="p-fluid formgrid grid">
-                        <div class="field col-lg-6 md:col-3">
-                            <label class="mb-1" for="mobileNumber"
-                            >Phone Number</label>
-                          
-                          <input
-                            id="mobileNumber"
-                            type="text"
-                            pInputText
-                            formControlName="mobileNumber"/>
-                        </div>
-                        <div class="field col-lg-6 md:col-3">
-                            <label class="mb-1" for="subject"
-                            >Subject</label
-                          >
-                          <input
-                            id="subject"
-                            type="text"
-                            pInputText
-                            formControlName="subject"/>
-                        </div>
-                    </div>
-                    <div class="p-fluid formgrid grid">
-                        <div class="field col-lg-12">
-                            <label class="mb-1" for="subject"
-                            >Message</label>
-                            <textarea rows="5" cols="30" pInputTextarea></textarea>
-                        </div>
-                    </div>
-                    
-                <a href="" class="submit-btn py-3 px-6">Send message</a>
-                </form>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 animate__animated animate__fadeInUp">
+        <h1 class="display-5 mb-4">Get in Touch</h1>
+        <p class="mb-4 text-secondary">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora
+          ipsum sapiente animi, provident consequatur doloribus?
+        </p>
+        <form [formGroup]="contactForm">
+          <div class="p-fluid formgrid grid">
+            <div class="field col-lg-6 md:col-3">
+              <label class="mb-1" for="Name">Your Name</label>
+              <input id="Name" type="text" pInputText formControlName="name" />
             </div>
-            <div class="col-lg-6 animate__fadeInUp" id="contact">
-                <div class="row mt-7">
-                    <div class="col-lg-6 col-md-3">
-                        <h4 class="mt-3 fw-bold text-primary">Makati City</h4>
-                        <p><i class="fa fa-map-marker-alt me-2"></i>2/F Zeta II Annex Bldg.. 191 Salcedo St., Legaspi Village, Makati City 1229 PHILIPPINES</p>
-                        <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
-                        <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
-                        <!-- <p-button (click)="showDialog()" label="See more.."></p-button>
-                        <p-dialog header="Header" [(visible)]="displayModal" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}" [draggable]="false" [resizable]="false">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </p-dialog> -->
-                    </div>
-                    <div class="col-lg-6 col-md-3">
-                        <h4 class="mt-3 fw-bold text-primary">Davao City</h4>
-                        <p><i class="fa fa-map-marker-alt me-2"></i>36 Quimpo Boulevard Ecoland Phase 1 (Near SM Ecoland, fronting Pan de Pugon), Davao City.</p>
-                        <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
-                        <p><i class="fa fa-envelope me-2"></i>info@example.com</p> 
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-6 col-md-3">
-                        <h4 class="mt-3 fw-bold text-primary">Cebu City</h4>
-                        <p><i class="fa fa-map-marker-alt me-2"></i> Ground Floor Gillamac Bldg., 169 Sanciangko st., Cebu City 6000, Philippines</p>
-                        <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
-                        <p><i class="fa fa-envelope me-2"></i>info@example.com</p> 
-                    </div>
-                    <div class="col-lg-6 col-md-3">
-                        <h4 class="mt-3 fw-bold text-primary">Baguio City</h4>
-                        <p><i class="fa fa-map-marker-alt me-2"></i>Rm.1, Ground and 2nd Floor, EDY Bldg. 144 Kisad Road, Baguio City Philippines 2600</p>
-                        <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
-                        <p><i class="fa fa-envelope me-2"></i>info@example.com</p> 
-                    </div>
-                </div>
+            <div class="field col-lg-6 md:col-3">
+              <label class="mb-1" for="email">Email Address</label>
+
+              <input
+                id="email"
+                type="text"
+                pInputText
+                formControlName="email" />
             </div>
+          </div>
+          <div class="p-fluid formgrid grid">
+            <div class="field col-lg-6 md:col-3">
+              <label class="mb-1" for="mobileNumber">Phone Number</label>
+
+              <input
+                id="mobileNumber"
+                type="text"
+                pInputText
+                formControlName="mobileNumber" />
+            </div>
+            <div class="field col-lg-6 md:col-3">
+              <label class="mb-1" for="subject">Subject</label>
+              <input
+                id="subject"
+                type="text"
+                pInputText
+                formControlName="subject" />
+            </div>
+          </div>
+          <div class="p-fluid formgrid grid">
+            <div class="field col-lg-12">
+              <label class="mb-1" for="message">Message</label>
+              <textarea
+                rows="5"
+                cols="30"
+                pInputTextarea
+                formControlName="message"></textarea>
+            </div>
+          </div>
+
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Send Message"
+            class="p-button-secondary"
+            [disabled]="contactForm.invalid"></button>
+        </form>
+      </div>
+      <div class="col-lg-6 animate__fadeInUp" id="contact">
+        <div class="row mt-7">
+          <div class="col-lg-6 col-md-3">
+            <h4 class="mt-3 fw-bold text-primary">Makati City</h4>
+            <p>
+              <i class="fa fa-map-marker-alt me-2"></i>2/F Zeta II Annex Bldg..
+              191 Salcedo St., Legaspi Village, Makati City 1229 PHILIPPINES
+            </p>
+            <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
+            <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+            <a (click)="showDialog()" role="button" class="text-sm text-info"
+              >See more...</a
+            >
+            <p-dialog
+              header="Header"
+              [(visible)]="displayModal"
+              [breakpoints]="{ '960px': '75vw' }"
+              [style]="{ width: '50vw' }"
+              [draggable]="false"
+              [resizable]="false">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </p-dialog>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <h4 class="mt-3 fw-bold text-primary">Davao City</h4>
+            <p>
+              <i class="fa fa-map-marker-alt me-2"></i>36 Quimpo Boulevard
+              Ecoland Phase 1 (Near SM Ecoland, fronting Pan de Pugon), Davao
+              City.
+            </p>
+            <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
+            <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+          </div>
         </div>
+        <div class="row mt-3">
+          <div class="col-lg-6 col-md-3">
+            <h4 class="mt-3 fw-bold text-primary">Cebu City</h4>
+            <p>
+              <i class="fa fa-map-marker-alt me-2"></i> Ground Floor Gillamac
+              Bldg., 169 Sanciangko st., Cebu City 6000, Philippines
+            </p>
+            <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
+            <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <h4 class="mt-3 fw-bold text-primary">Baguio City</h4>
+            <p>
+              <i class="fa fa-map-marker-alt me-2"></i>Rm.1, Ground and 2nd
+              Floor, EDY Bldg. 144 Kisad Road, Baguio City Philippines 2600
+            </p>
+            <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
+            <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <app-footer></app-footer>

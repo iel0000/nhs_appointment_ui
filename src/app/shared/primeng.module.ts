@@ -25,6 +25,7 @@ import { PanelModule } from 'primeng/panel';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { TagModule } from 'primeng/tag';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [],
@@ -48,6 +49,7 @@ import { TagModule } from 'primeng/tag';
     PanelModule,
     ToastModule,
     TagModule,
+    DialogModule,
   ],
   providers: [MessageService, ConfirmationService],
   exports: [
@@ -73,6 +75,7 @@ import { TagModule } from 'primeng/tag';
     PanelModule,
     ToastModule,
     TagModule,
+    DialogModule,
   ],
 })
 export class PrimeNgModule {}
