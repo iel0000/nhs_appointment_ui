@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ResolveEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,9 +16,14 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    console.log(this.router.url.split('/')[1]);
-    if (this.router.url.split('/')[1] === 'appointment') {
-      this.isAppointment = true;
-    }
+    this.router.events.subscribe(routerData => {
+      if (routerData instanceof ResolveEnd) {
+        if (routerData.url.includes('appointment')) {
+          this.isAppointment = true;
+        } else {
+          this.isAppointment = false;
+        }
+      }
+    });
   }
 }

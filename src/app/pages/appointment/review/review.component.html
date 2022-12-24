@@ -9,7 +9,7 @@
           [toggleable]="true"
           class="w-100">
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="embassy"> Site</label>
               <div class="text-lg">NHS {{ branch?.name }}</div>
             </div>
@@ -21,13 +21,13 @@
             </div>
           </div>
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="visaType">Appointment Date</label>
               <div class="text-lg">
                 {{ scheduleInformation.appointmentDate | date }}
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="visaCategory">Appointment Time</label>
               <div class="text-lg">
                 {{ appointmentTime }}
@@ -42,50 +42,50 @@
           [toggleable]="true"
           class="w-100">
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <label class="mb-1" for="firstName">Child/Adult/PWD/Senior</label>
               <div class="text-lg">{{ categories }}</div>
             </div>
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <label class="mb-1" for="firstName">Referred by</label>
               <div class="text-lg">{{ referrals }}</div>
             </div>
           </div>
 
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="firstName">Last Name</label>
               <div class="text-lg">{{ personalInformation.lastName }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="firstName">First Name</label>
               <div class="text-lg">{{ personalInformation.firstName }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="firstName">Middle Name</label>
               <div class="text-lg">{{ personalInformation.middleName }}</div>
             </div>
           </div>
 
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="birthDate">Date of Birth</label>
               <div class="text-lg">
                 {{ personalInformation.birthDate | date }}
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="age">Age</label>
               <div class="text-lg">{{ personalInformation.age }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="civilStatus">Civil Status</label>
               <div class="text-lg">{{ personalInformation.civilStatus }}</div>
             </div>
           </div>
 
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="gender">Gender</label>
               <div class="text-lg">{{ personalInformation.gender }}</div>
             </div>
@@ -94,7 +94,7 @@
           <div
             class="p-fluid formgrid grid"
             *ngIf="personalInformation.gender === 'Female'">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1 mr-2" for="hasMenstrualPeriod"
                 >Is Menstrual Period Applicable?
               </label>
@@ -103,7 +103,7 @@
               </div>
             </div>
             <div
-              class="field col-12 md:col-4"
+              class="field col-4 md:col-12"
               *ngIf="
                 personalInformation.gender === 'Female' &&
                 personalInformation.hasMenstrualPeriod
@@ -113,7 +113,7 @@
                 {{ personalInformation.menstrualPeriodStart | date }}
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="menstrualPeriodEnd"
                 >Menstrual Period End</label
               >
@@ -135,19 +135,19 @@
           </div>
 
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="passportNumber">Passport Number</label>
               <div class="text-lg">
                 {{ personalInformation.passportNumber }}
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="dateIssued">Date Issued</label>
               <div class="text-lg">
                 {{ personalInformation.dateIssued | date }}
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mr-2" for="isExpired">Expired in 6 Months? </label>
               <div class="text-lg">
                 {{ personalInformation.isExpired ? 'Yes' : 'No' }}
@@ -158,22 +158,22 @@
           <div
             class="p-fluid formgrid grid"
             *ngIf="personalInformation.hasOtherId">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="otherId">Other ID</label>
               <div class="text-lg">{{ personalInformation.otherId }}</div>
             </div>
           </div>
 
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="email">Email Address</label>
               <div class="text-lg">{{ personalInformation.email }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="mobileNumber">Mobile Number</label>
               <div class="text-lg">{{ personalInformation.mobileNumber }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label class="mb-1" for="landLineNumber">Landline Number</label>
               <div class="text-lg">
                 {{ personalInformation.landLineNumber }}
@@ -192,15 +192,15 @@
       <div class="p-fluid formgrid grid my-2">
         <p-panel header="VISA Information" [toggleable]="true" class="w-100">
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="embassy"> Embassy</label>
               <div class="text-lg">{{ embassy }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="visaType">Visa Type</label>
               <div class="text-lg">{{ visaType }}</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <label for="visaCategory">Visa Category</label>
               <div class="text-lg">{{ visaCategory }}</div>
             </div>
@@ -276,12 +276,12 @@
                 </div>
               </div>
             </div>
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <div class="text-muted">
                 Do you intend to work or study to be a
               </div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <div class="text-lg">{{ intendedWork }}</div>
             </div>
           </div>
@@ -310,10 +310,10 @@
           <div
             class="p-fluid formgrid grid"
             *ngIf="visaInformation.embassy === '3'">
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <div class="text-muted">c. Length Of Stay</div>
             </div>
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <div class="text-lg">{{ lengthOfStay }}</div>
             </div>
           </div>

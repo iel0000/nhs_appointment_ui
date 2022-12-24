@@ -7,7 +7,7 @@
   <ng-template pTemplate="content">
     <form class="mt-4" [formGroup]="personalForm">
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-6">
+        <div class="field col-6 md:col-12">
           <label class="mb-1" for="firstName"
             >Child/Adult/PWD/Senior <span style="color: red">*</span></label
           >
@@ -25,7 +25,7 @@
             >Field is required.</small
           >
         </div>
-        <div class="field col-12 md:col-6">
+        <div class="field col-6 md:col-12">
           <label class="mb-1" for="firstName"
             >Referred by <span style="color: red">*</span></label
           >
@@ -46,7 +46,7 @@
       </div>
       <!-- FN,MN,LN -->
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="lastName"
             >Last Name <span style="color: red">*</span></label
           >
@@ -62,7 +62,7 @@
             >Last Name is required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="firstName"
             >First Name <span style="color: red">*</span></label
           >
@@ -78,7 +78,7 @@
             >Firstname is required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="middleName"
             >Middle Name <span style="color: red">*</span></label
           >
@@ -98,7 +98,7 @@
       <!-- DOB , Age , Civil Status -->
 
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="birthDate"
             >Date of Birth <span style="color: red">*</span></label
           >
@@ -118,7 +118,7 @@
             >Date of Birth is required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="age"
             >Age <span style="color: red">*</span></label
           >
@@ -134,7 +134,7 @@
             >Age is required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="civilStatus"
             >Civil Status <span style="color: red">*</span></label
           >
@@ -155,7 +155,7 @@
       </div>
       <!-- Gender  -->
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-6">
+        <div class="field col-6 md:col-12">
           <label class="mb-1" for="gender"
             >Gender <span style="color: red">*</span></label
           >
@@ -178,7 +178,7 @@
       <div
         class="p-fluid formgrid grid"
         *ngIf="personalForm.get('gender')?.value === 'Female'">
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1 mr-2" for="hasMenstrualPeriod"
             >Is Menstrual Period Applicable?
           </label>
@@ -197,7 +197,7 @@
           personalForm.get('gender')?.value === 'Female' &&
           personalForm.get('hasMenstrualPeriod')?.value === true
         ">
-        <div class="field col-12 md:col-6">
+        <div class="field col-6 md:col-12">
           <label for="menstrualPeriodStart"
             >Menstrual Period Start <span style="color: red">*</span></label
           >
@@ -213,7 +213,7 @@
             >Menstrual Period Start is required.</small
           >
         </div>
-        <div class="field col-12 md:col-6">
+        <div class="field col-6 md:col-12">
           <label for="menstrualPeriodEnd"
             >Menstrual Period End <span style="color: red">*</span></label
           >
@@ -253,7 +253,7 @@
       <!-- Passport / Date Issued -->
 
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="small mb-1" for="passportNumber"
             >Passport Number
             <span style="color: red" *ngIf="isPassportRequired">*</span></label
@@ -270,7 +270,7 @@
             >Passport Number is Required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="dateIssued"
             >Date Issued
             <span style="color: red" *ngIf="isPassportRequired">*</span></label
@@ -289,7 +289,7 @@
             >Date Issued is required.</small
           >
         </div>
-        <div class="field col-12 md:col-2 my-5">
+        <div class="field col-2 md:col-12 my-5">
           <label class="mr-2" for="isExpired">Expired in 6 Months? </label>
           <p-checkbox
             [binary]="true"
@@ -301,7 +301,7 @@
       </div>
 
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-4 my-5">
+        <div class="field col-4 md:col-12 my-5">
           <label class="mr-2" for="hasOtherId">Other ID </label>
           <p-checkbox
             [binary]="true"
@@ -312,7 +312,7 @@
           </p-checkbox>
         </div>
         <div
-          class="field col-12 md:col-4"
+          class="field col-4 md:col-12"
           *ngIf="personalForm.get('hasOtherId')?.value === true">
           <label class="small mb-1" for="otherId"
             >Other ID <span style="color: red">*</span></label
@@ -332,7 +332,7 @@
       </div>
       <!-- email|Mobile Number|Landline -->
       <div class="p-fluid formgrid grid">
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="small mb-1" for="email"
             >Email Address<span style="color: red">*</span></label
           >
@@ -349,7 +349,7 @@
             >Email Address is Required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="mobileNumber"
             >Mobile Number <span style="color: red">*</span></label
           >
@@ -366,7 +366,7 @@
             >Mobile Number is required.</small
           >
         </div>
-        <div class="field col-12 md:col-4">
+        <div class="field col-4 md:col-12">
           <label class="mb-1" for="landLineNumber">Landline Number </label>
           <input
             type="text"

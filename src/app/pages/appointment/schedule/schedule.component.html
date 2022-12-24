@@ -6,7 +6,7 @@
         <div class="row">
           <h5>Site:<span style="color: red">*</span></h5>
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-4">
+            <div class="field col-4 md:col-12">
               <p-dropdown
                 [options]="branch"
                 placeholder="Select Site"
@@ -39,7 +39,7 @@
         </div>
         <div class="row" *ngIf="showCalendar">
           <div class="p-fluid formgrid grid">
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <h5>Date<span style="color: red">*</span></h5>
               <p-divider></p-divider>
               <p-calendar
@@ -66,7 +66,7 @@
                 </ng-template>
               </p-calendar>
             </div>
-            <div class="field col-12 md:col-6">
+            <div class="field col-6 md:col-12">
               <h5>Time<span style="color: red">*</span></h5>
               <p-divider></p-divider>
               <!-- Time  -->

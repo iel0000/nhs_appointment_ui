@@ -7,7 +7,7 @@
     <ng-template pTemplate="content">
       <form [formGroup]="visaForm">
         <div class="p-fluid formgrid grid">
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <label class="mb-1" for="embassy"
               >Embassy <span style="color: red">*</span></label
             >
@@ -26,7 +26,7 @@
               >Embassy is required.</small
             >
           </div>
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <label class="mb-1" for="visaType"
               >Visa Type <span style="color: red">*</span></label
             >
@@ -44,7 +44,7 @@
               >Visa Type is required.</small
             >
           </div>
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <label class="mb-1" for="visaCategory"
               >Visa Category <span style="color: red">*</span></label
             >
@@ -203,13 +203,13 @@
               </div>
             </div>
           </div>
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <label class="my-2" for="lengthOfStay"
               >Do you intend to work or study to be a
               <span style="color: red">*</span></label
             >
           </div>
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <p-dropdown
               [options]="intendedWork"
               optionLabel="name"
@@ -264,12 +264,12 @@
         <div
           class="p-fluid formgrid grid"
           *ngIf="this.visaForm.get('embassy')?.value === '3'">
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <label class="my-2" for="lengthOfStay"
               >c. Length Of Stay <span style="color: red">*</span></label
             >
           </div>
-          <div class="field col-12 md:col-4">
+          <div class="field col-4 md:col-12">
             <p-dropdown
               [options]="lengthOfStay"
               optionLabel="name"
