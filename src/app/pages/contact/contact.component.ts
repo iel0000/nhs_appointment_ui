@@ -25,7 +25,19 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {}
   displayModal!: boolean;
-  showDialog() {
+  showMakati() {
     this.displayModal = true;
+  }
+  displayModal2!:boolean;
+  showDavao(){
+    this.displayModal2 = true;
+  }
+  displayModal3!:boolean;
+  showCebu(){
+    this.displayModal3 = true;
+  }
+  displayModal4!:boolean;
+  showBaguio(){
+    this.displayModal4 = true;
   }
 }

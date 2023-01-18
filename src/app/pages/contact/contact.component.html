@@ -9,11 +9,11 @@
         </p>
         <form [formGroup]="contactForm">
           <div class="p-fluid formgrid grid">
-            <div class="field col-lg-6 md:col-3">
+            <div class="col-lg-6 col-12">
               <label class="mb-1" for="Name">Your Name</label>
               <input id="Name" type="text" pInputText formControlName="name" />
             </div>
-            <div class="field col-lg-6 md:col-3">
+            <div class="col-lg-6 col-12">
               <label class="mb-1" for="email">Email Address</label>
 
               <input
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="p-fluid formgrid grid">
-            <div class="field col-lg-6 md:col-3">
+            <div class="col-lg-6 col-12">
               <label class="mb-1" for="mobileNumber">Phone Number</label>
 
               <input
@@ -33,7 +33,7 @@
                 pInputText
                 formControlName="mobileNumber" />
             </div>
-            <div class="field col-lg-6 md:col-3">
+            <div class="col-lg-6 col-12">
               <label class="mb-1" for="subject">Subject</label>
               <input
                 id="subject"
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="p-fluid formgrid grid">
-            <div class="field col-lg-12">
+            <div class="col-12">
               <label class="mb-1" for="message">Message</label>
               <textarea
                 rows="5"
@@ -65,36 +65,82 @@
       <div class="col-lg-6 animate__fadeInUp" id="contact">
         <div class="row mt-7">
           <div class="col-lg-6 col-md-3">
-            <h4 class="mt-3 fw-bold text-primary">Makati City</h4>
+            <h4 class="mt-3 fw-bold">Makati City</h4>
             <p>
               <i class="fa fa-map-marker-alt me-2"></i>2/F Zeta II Annex Bldg..
               191 Salcedo St., Legaspi Village, Makati City 1229 PHILIPPINES
             </p>
             <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
             <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
-            <a (click)="showDialog()" role="button" class="text-sm text-info"
+            <a (click)="showMakati()" role="button" class="text-md text-info"
               >See more...</a
             >
             <p-dialog
-              header="Header"
+              header="NATIONWIDE HEALTH SYSTEMS AUX (MAKATI CITY)"
               [(visible)]="displayModal"
               [breakpoints]="{ '960px': '75vw' }"
               [style]="{ width: '50vw' }"
               [draggable]="false"
               [resizable]="false">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p class="text-center fw-bold mb-1">
+                ADDRESS
               </p>
+              <p class="text-center"><i class="fa fa-map-marker-alt me-2 mb-2"></i>2/F Zeta II Annex Bldg..
+                191 Salcedo St., Legaspi Village, Makati City 1229 PHILIPPINES</p>
+              <div class="p-fluid grid">
+                <div class="col-md-6 col-12">
+                      <p class="text-info fw-bold mb-2">For Appointment/General Inquiries</p>
+                      
+                      <p class="text-md fw-bold mb-1">Mobile & Landline Number</p>
+                      <div class="p-fluid grid">
+                        <div class="col-md-6 col-12">
+                            <p class="text-sm mb-1"><i class="fa fa-phone-alt me-2"></i>(02) 775 95022</p>
+                            <p class="text-sm mb-1"><i class="fa fa-phone-alt me-2"></i>(02) 881 00785 </p>
+                            <p class="text-sm mb-1"><i class="fa fa-phone-alt me-2"></i>(02) 794 57615</p>
+                          </div>
+                          <div class="col-md-6 col-12">
+                          <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639176246589</p>
+                          <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639567183191</p>
+                          </div>
+                      </div>
+                      <p class="text-md fw-bold mb-1">Email Address</p>
+                      <div class="p-fluid grid">
+                        <div class="col-12">
+                           <p class="mb-1"><i class="fa fa-envelope me-2"></i>nhsi_makati@yahoo.com.ph</p>
+                           <p class="mb-1"><i class="fa fa-envelope me-2"></i>nhsaux.australia@gmail.com</p>
+                           <p class="mb-1"><i class="fa fa-envelope me-2"></i>nhsaux.canada@gmail.com</p>
+                           <p class="mb-1"><i class="fa fa-envelope me-2"></i>nationwidexray2010@yahoo.com</p>
+                        </div>
+                      </div>
+                     
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <p class="text-info fw-bold mb-1">For Follow-Up (Post Exam)</p>
+                    <p class="text-md fw-bold mb-1">Australia</p>
+                      <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639176246836</p>
+                      <p class="mb-1"><i class="fa fa-envelope me-2"></i>nationwidemanila@yahoo.com.ph</p>
+                    <p class="text-md fw-bold mb-1">Canada</p>
+                      <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639176242197</p>
+                      <p class="mb-1"><i class="fa fa-envelope me-2"></i>nhsauxcanada@yahoo.com</p>
+                    <p class="text-md fw-bold mb-1">New Zealand</p>
+                      <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639176246836</p>
+                      <p class="mb-1"><i class="fa fa-envelope me-2"></i>nationwidenz@yahoo.com</p>
+                    <p class="text-md fw-bold mb-1">X-Ray</p>
+                      <p class="mb-1"><i class="fa fa-envelope me-2"></i>nationwidexray2010@yahoo.com</p>
+
+                  </div>
+                  <div class="row">
+                        <div class="position-relative rounded overflow-hidden h-100">
+                          <iframe width="700" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=2nd%20Floor%20Zeta%20II%20Annex%20Bldg,%20191%20Salcedo,%20Legazpi%20Village,%20Makati,%20Metro%20Manila&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+                  </div>
+              </div>
+             
             </p-dialog>
           </div>
           <div class="col-lg-6 col-md-3">
-            <h4 class="mt-3 fw-bold text-primary">Davao City</h4>
+            <h4 class="mt-3 fw-bold">Davao City</h4>
             <p>
               <i class="fa fa-map-marker-alt me-2"></i>36 Quimpo Boulevard
               Ecoland Phase 1 (Near SM Ecoland, fronting Pan de Pugon), Davao
@@ -102,26 +148,218 @@
             </p>
             <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
             <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+            <a (click)="showDavao()" role="button" class="text-md text-info"
+              >See more...</a
+            >
+            <p-dialog
+              header="NATIONWIDE HEALTH SYSTEMS (DAVAO CITY)"
+              [(visible)]="displayModal2"
+              [breakpoints]="{ '960px': '75vw' }"
+              [style]="{ width: '50vw' }"
+              [draggable]="false"
+              [resizable]="false">
+              <p class="text-center fw-bold mb-1">
+                ADDRESS
+              </p>
+              <p class="text-center"><i class="fa fa-map-marker-alt me-2 mb-2"></i>36 Quimpo Boulevard Ecoland Phase 1 
+                (Near SM Ecoland, fronting Pan de Pugon), Davao City.</p>
+              <div class="p-fluid grid">
+                <div class="col-md-6 col-12">
+                      <p class="text-info fw-bold mb-2">For Appointment/General Inquiries</p>
+                      
+                      <p class="text-md fw-bold mb-1">Mobile & Landline Number</p>
+                      <div class="p-fluid grid">
+                        <div class="col-md-6 col-12">
+                            <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639987910223</p>
+                            <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>+639326710260</p>
+                            <p class="text-sm mb-1"><i class="fa fa-phone-alt me-2"></i>+63822965136</p>
+                          </div>
+                          <div class="col-md-6 col-12">
+                          <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>TBDOTS: +639176300380</p>
+                          <p class="text-sm mb-1"><i class="fa fa-mobile-screen-button me-2"></i>General inquiries: +639176238249</p>
+                          </div>
+                      </div>
+                      <p class="text-md fw-bold mb-1">Email Address</p>
+                      <div class="p-fluid grid">
+                        <div class="col-12">
+                           <p class="mb-1"><i class="fa fa-envelope me-2"></i>nationwidedavao@yahoo.com</p>
+                        </div>
+                      </div>
+                     
+                  </div>
+                  <div class="col-md-6 col-12">
+                    <div class="position-relative rounded overflow-hidden h-100">
+                        <iframe width="600" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=nhs%20davao&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                  </div>
+              </div>
+             
+            </p-dialog>
           </div>
         </div>
         <div class="row mt-3">
           <div class="col-lg-6 col-md-3">
-            <h4 class="mt-3 fw-bold text-primary">Cebu City</h4>
+            <h4 class="mt-3 fw-bold">Cebu City</h4>
             <p>
               <i class="fa fa-map-marker-alt me-2"></i> Ground Floor Gillamac
               Bldg., 169 Sanciangko st., Cebu City 6000, Philippines
             </p>
             <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
             <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+            <a (click)="showCebu()" role="button" class="text-md text-info"
+              >See more...</a
+            >
+            <p-dialog
+              header="NATIONWIDE HEALTH SYSTEMS (DAVAO CITY)"
+              [(visible)]="displayModal3"
+              [breakpoints]="{ '960px': '75vw' }"
+              [style]="{ width: '50vw' }"
+              [draggable]="false"
+              [resizable]="false">
+              <p class="text-center fw-bold mb-1">
+                ADDRESS
+              </p>
+              <p class="text-center"><i class="fa fa-map-marker-alt me-2 mb-2"></i>Ground Floor Gillamac Bldg., 169 Sanciangko st., Cebu City 6000, Philippines</p>
+              <div class="p-fluid grid">
+                <div class="col-12">
+                    <img src="../../../assets/img/cebu_contact.png" class="baguio"alt="">
+                     
+                  </div>
+                  <div class="col-12">
+                    <div class="position-relative rounded overflow-hidden h-100">
+                      <iframe width="800" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=nhs%20cebu&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                  </div>
+              </div>
+             
+            </p-dialog>
           </div>
           <div class="col-lg-6 col-md-3">
-            <h4 class="mt-3 fw-bold text-primary">Baguio City</h4>
+            <h4 class="mt-3 fw-bold">Baguio City</h4>
             <p>
               <i class="fa fa-map-marker-alt me-2"></i>Rm.1, Ground and 2nd
               Floor, EDY Bldg. 144 Kisad Road, Baguio City Philippines 2600
             </p>
             <p><i class="fa fa-phone-alt me-2"></i>(02) 123 456 789</p>
             <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+            <a (click)="showBaguio()" role="button" class="text-md text-info"
+              >See more...</a
+            >
+            <p-dialog
+              header="NATIONWIDE HEALTH SYSTEMS (Baguio CITY)"
+              [(visible)]="displayModal4"
+              [breakpoints]="{ '960px': '75vw' }"
+              [style]="{ width: '50vw' }"
+              [draggable]="false"
+              [resizable]="false">
+              <p class="text-center fw-bold mb-1">
+                ADDRESS
+              </p>
+              <p class="text-center"><i class="fa fa-map-marker-alt me-2 mb-2"></i>Rm.1, Ground and 2nd Floor, EDY Bldg. 144 Kisad Road, Baguio City Philippines 2600</p>
+              <div class="p-fluid grid">
+                <div class="col-12">
+                    <!-- <img src="../../../assets/img/baguio_contact.png" alt=""> -->
+                    <p class="text-center fw-bold" style="background-color:#373737; color: white;">Mobile/Landline Number (APPOINTMENT / FOLLOW-UPS / INQUIRY)</p> 
+                     <table class="table table-bordered">
+                        <thead class="text-center" style="background-color: #373737; color: white;">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">In-Charge</th>
+                            <th scope="col">Mobile/Landline Number</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>For General Inquiry</td>
+                            <td>Novy</td>
+                            <td class="text-primary fw-semi-bold">(+63)742446036<br>(+63)22453502<br>(+63)9271815150 </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>For Appointment AE/NE</td>
+                            <td>Robi</td>
+                            <td class="text-primary fw-semi-bold">(+63)9167404979</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>For Appointments CE</td>
+                            <td>Eds</td>
+                            <td class="text-primary fw-semi-bold">(+63)9177148963 </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>For Follow Up (Additional / Furtherance) Backroom (AE/NE)</td>
+                            <td>Julie</td>
+                            <td class="text-primary fw-semi-bold">(+63)9167402857 </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>For Follow Up (Additional / Furtherance) Backroom (CE)</td>
+                            <td>Joy</td>
+                            <td class="text-primary fw-semi-bold">(+63)9177148949 </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>For Follow Up (Additional / Furtherance) Backroom (Processing)</td>
+                            <td>Val</td>
+                            <td class="text-primary fw-semi-bold">(+63)9177148948 </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>For Follow Up (Post-Exam) Backroom</td>
+                            <td>Nalyn</td>
+                            <td class="text-primary fw-semi-bold">(+63)9177065356 </td>
+                          </tr>
+                        </tbody>
+                     </table>
+
+                     <p class="text-center fw-bold" style="background-color:#373737; color: white;">Email Address (APPOINTMENT / FOLLOW-UPS / INQUIRY)</p> 
+                     <table class="table table-bordered">
+                        <thead class="text-center" style="background-color: #373737; color: white;">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">In-Charge</th>
+                            <th scope="col">Email Address</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>For Appointments / Inquiries (AE/NE) </td>
+                            <td>Eds</td>
+                            <td class="text-primary fw-semi-bold">nhsibaguio.australia@gmail.com</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>For Appointments / Inquiries (CE)</td>
+                            <td>Eds</td>
+                            <td class="text-primary fw-semi-bold">nhsibaguio.canada@gmail.com</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>For Follow Up (Additional / Furtherance) (AE/NE/CE)</td>
+                            <td>Joy</td>
+                            <td class="text-primary fw-semi-bold">nationwidebaguio.ae@yahoo.com<br>nationwidebaguio.ne@yahoo.com<br>nationwidebaguio.ce@yahoo.com</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>For Follow Up (Post-Exams / results)</td>
+                            <td>Nalyn</td>
+                            <td class="text-primary fw-semi-bold">nationwide.baguio2008@yahoo.com</td>
+                          </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="col-12">
+                    <div class="position-relative rounded overflow-hidden h-100">
+                      <iframe width="800" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=nhs%20baguio&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>     </div>
+                  </div>
+              </div>
+             
+            </p-dialog>
           </div>
         </div>
       </div>
