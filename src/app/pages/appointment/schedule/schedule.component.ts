@@ -81,6 +81,12 @@ export class ScheduleComponent implements OnInit, OnDestroy {
           return;
         }
 
+        this.selectedBranch = s.schedule.site;
+
+        if (this.selectedBranch) {
+          this.getDisabledDays();
+        }
+
         this.scheduleForm.patchValue({
           site: s.schedule.site,
           appointmentDate: s.schedule.appointmentDate,
@@ -91,7 +97,6 @@ export class ScheduleComponent implements OnInit, OnDestroy {
           ? formatDate(s.schedule.appointmentDate, 'MM/dd/yyyy', 'en-US')
           : '';
         this.selectedTime = s.schedule.appointmentTime;
-        this.selectedBranch = s.schedule.site;
 
         let payload = {
           appointmentDate: s.schedule.appointmentDate,
@@ -117,7 +122,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  getDisabledDays(event: any) {
+  getDisabledDays() {
     this.showCalendar = false;
     this.selectedTime = '';
     this.appointmentDate = '';

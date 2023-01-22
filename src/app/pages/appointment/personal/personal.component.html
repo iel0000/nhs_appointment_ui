@@ -173,7 +173,9 @@
             >Gender is required.</small
           >
         </div>
-        <div class="col-lg-6 col-12 col-md-12 mt-5" *ngIf="personalForm.get('gender')?.value === 'Female'">
+        <div
+          class="col-lg-6 col-12 col-md-12 mt-5"
+          *ngIf="personalForm.get('gender')?.value === 'Female'">
           <label class="mb-1 mr-2" for="hasMenstrualPeriod"
             >Is Menstrual Period Applicable?
           </label>

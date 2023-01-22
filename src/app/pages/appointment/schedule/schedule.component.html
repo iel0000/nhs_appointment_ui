@@ -15,7 +15,7 @@
                 [showClear]="true"
                 formControlName="site"
                 [(ngModel)]="selectedBranch"
-                (onChange)="getDisabledDays($event)">
+                (onChange)="getDisabledDays()">
                 <ng-template pTemplate="selectedItem">
                   <div *ngIf="selectedBranch">NHS {{ branchDetails.name }}</div>
                 </ng-template>
@@ -34,13 +34,13 @@
               icon="pi pi-map-marker"
               styleClass="mx-2 mb-5 mt-3"
               severity="info"
-              [value]="branchDetails.location"></p-tag>
+              [value]="branchDetails?.location"></p-tag>
           </div>
         </div>
         <div class="row" *ngIf="showCalendar">
           <div class="p-fluid formgrid grid">
             <div class="col-lg-6 col-12 col-md-12">
-              <h5>Date<span style="color: red">*</span></h5>
+              <h5>Date<span style="color: red">*</span> {{ selectedTime }}</h5>
               <p-divider></p-divider>
               <p-calendar
                 [inline]="true"
