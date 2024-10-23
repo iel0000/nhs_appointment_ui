@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://htcdc.runasp.net',
+  apiUrl: 'https://htcdc.runasp.net',
 };
